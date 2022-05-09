@@ -10,7 +10,6 @@ pub fn build(b: *std.build.Builder) void {
     const lib = b.addSharedLibrary("hello", "src/main.zig", b.version(1, 0, 0));
     lib.setBuildMode(mode);
     lib.setTarget(target);
-    lib.linkLibC();
     lib.install();
 
     const main_tests = b.addTest("src/main.zig");
